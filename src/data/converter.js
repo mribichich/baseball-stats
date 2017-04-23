@@ -22,17 +22,17 @@ export function convertPlayer(csv) {
     sac_flies: parseInt(data[11], 0),
     sac_hits: parseInt(data[12], 0),
     walks: parseInt(data[13], 0),
-    walksAvg: parseFloat(data[14].insertAt(1, '.')),
+    walksAvg: parseFloat(data[14]), //.insertAt(1, '.')),
     strikeOuts: parseInt(data[15], 0),
-    strikeOutsAvg: parseFloat(data[16].insertAt(1, '.')),
+    strikeOutsAvg: parseFloat(data[16]), //.insertAt(1, '.')),
     rbi: parseInt(data[17], 0),
     runs: parseInt(data[18], 0),
-    avg: parseFloat(data[19].insertAt(1, '.')),
-    obp: parseFloat(data[20].insertAt(1, '.')),
-    slg: parseFloat(data[21].insertAt(1, '.')),
+    avg: parseFloat(data[19]), //.insertAt(1, '.')),
+    obp: parseFloat(data[20]), //.insertAt(1, '.')),
+    slg: parseFloat(data[21]), //.insertAt(1, '.')),
     stolenBases: parseInt(data[22], 0),
     stolenBasesAttempts: parseInt(data[23], 0),
-    stolenBasesAvg: parseFloat(data[24].insertAt(1, '.'))
+    stolenBasesAvg: parseFloat(data[24]), //.insertAt(1, '.'))
   }
 }
 

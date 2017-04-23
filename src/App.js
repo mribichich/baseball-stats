@@ -27,7 +27,7 @@ class App extends Component {
 
   filterStats(stats, selectedMinimumAtBats) {
     return selectedMinimumAtBats
-      ? [...stats.filter(f => f.atBats >= selectedMinimumAtBats)]
+      ? [...stats.filter(f => f.plateAppearances >= selectedMinimumAtBats)]
       : stats;
   }
 

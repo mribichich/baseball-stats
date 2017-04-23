@@ -29,12 +29,12 @@ export function calculateTopStats(stats) {
         .take(rbiStats, 5)
         .map(m => map(m, (f) => f.rbi))
     }, {
-      title: 'DD',
+      title: '2B',
       tops: _
         .take(doublesStats, 5)
         .map(m => map(m, (f) => f.doubles))
     }, {
-      title: 'TT',
+      title: '3B',
       tops: _
         .take(triplesStats, 5)
         .map(m => map(m, (f) => f.triples))

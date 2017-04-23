@@ -32,7 +32,7 @@ class TableStats extends Component {
 
   render() {
     return (
-      <table className="tableStats__table">
+      <table className="tableStats__table table ">
         <thead>
           <tr>
             <th onClick={(e) => this.handleOnClick(e, 'number')}>N</th>
@@ -40,9 +40,9 @@ class TableStats extends Component {
             <th onClick={(e) => this.handleOnClick(e, 'plateAppearances')}>PA</th>
             <th onClick={(e) => this.handleOnClick(e, 'atBats')}>AB</th>
             <th onClick={(e) => this.handleOnClick(e, 'hits')}>H</th>
-            <th onClick={(e) => this.handleOnClick(e, 'singles')}>S</th>
-            <th onClick={(e) => this.handleOnClick(e, 'doubles')}>D</th>
-            <th onClick={(e) => this.handleOnClick(e, 'triples')}>T</th>
+            <th onClick={(e) => this.handleOnClick(e, 'singles')}>1B</th>
+            <th onClick={(e) => this.handleOnClick(e, 'doubles')}>2B</th>
+            <th onClick={(e) => this.handleOnClick(e, 'triples')}>3B</th>
             <th onClick={(e) => this.handleOnClick(e, 'home_runs')}>HR</th>
             <th onClick={(e) => this.handleOnClick(e, 'runsOverErrors')}>ROE</th>
             <th onClick={(e) => this.handleOnClick(e, 'hitByPitch')}>HBP</th>
