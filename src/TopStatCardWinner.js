@@ -16,7 +16,7 @@ class TopStatCardWinner extends Component {
 
     const playerPicture = playerFaces.find(f => f.number === this.props.winner.number);
     const playerPictureSrc = playerPicture
-      ? playerPicture.image
+      ? playerPicture.image || NO_FACE
       : NO_FACE;
 
     return (
