@@ -27,7 +27,7 @@ export default class TopStatCard extends Component {
             <Flex>
               <TopStatCardWinner winner={winner} selectedPlayer={this.props.selectedPlayer}/>
             </Flex>
-
+            <br/>
             <Flex>
               <TopStatCardRunnerUps
                 runnerUps={runnerUps}
