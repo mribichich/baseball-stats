@@ -50,7 +50,7 @@ export default[
     image : null // getPath('72.jpg')
   }, {
     number : 77,
-    image : null // getPath('77.jpg')
+    image : getPath('77.jpg')
   }, {
     number : 99,
     image : null // getPath('99.jpg')
