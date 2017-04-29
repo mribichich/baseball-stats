@@ -1,14 +1,25 @@
-export const baseDir = '/faces';
+import noFace from '../assets/faces/no_face.png';
+import face2 from '../assets/faces/2.jpg';
+import face7 from '../assets/faces/7.jpg';
+import face24 from '../assets/faces/24.jpg';
+import face33 from '../assets/faces/33.jpg';
+import face77 from '../assets/faces/77.jpg';
+import face114 from '../assets/faces/114.jpg';
 
-export const NO_FACE = `${baseDir}/no_face.png`;
+// export const baseDir = 'faces'; export const NO_FACE =
+// `${baseDir}/no_face.png`;
+
+export const NO_FACE = noFace;
+
+// function getPath(path) {   return `${baseDir}/${path}`; }
 
 export default[
   {
     number : 2,
-    image : getPath('2.jpg')
+    image : face2, // getPath('2.jpg')
   }, {
     number : 7,
-    image : getPath('7.jpg')
+    image : face7, // getPath('7.jpg')
   }, {
     number : 12,
     image : null // getPath('12.jpg')
@@ -23,7 +34,7 @@ export default[
     image : null // getPath('23.jpg')
   }, {
     number : 24,
-    image : getPath('24.jpg')
+    image : face24, // getPath('24.jpg')
   }, {
     number : 25,
     image : null // getPath('25.jpg')
@@ -35,7 +46,7 @@ export default[
     image : null // getPath('32.jpg')
   }, {
     number : 33,
-    image : getPath('33.jpg')
+    image : face33, // getPath('33.jpg')
   }, {
     number : 36,
     image : null // getPath('36.jpg')
@@ -50,7 +61,7 @@ export default[
     image : null // getPath('72.jpg')
   }, {
     number : 77,
-    image : getPath('77.jpg')
+    image : face77, // getPath('77.jpg')
   }, {
     number : 99,
     image : null // getPath('99.jpg')
@@ -62,13 +73,9 @@ export default[
     image : null // getPath('113.jpg')
   }, {
     number : 114,
-    image : getPath('114.jpg')
+    image : face114, // getPath('114.jpg')
   }, {
     number : 115,
     image : null // getPath('115.jpg')
   }
 ];
-
-function getPath(path) {
-  return `${baseDir}/${path}`;
-}
