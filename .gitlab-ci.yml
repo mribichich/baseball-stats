@@ -8,11 +8,12 @@ pages:
   script:
     - yarn
     - yarn build
-    - mkdir .public
-    - cp -r build/* .public
+    # - mkdir .public
     - rm -rf public/*
-    - mv .public public
-    - ls public
+    - cp -r build/* public
+    # - rm -rf public/*
+    # - mv .public public
+    # - ls public
   artifacts:
     paths:
     - public
