@@ -2,6 +2,7 @@
   "name": "baseball-stats",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mribichich.gitlab.io/baseball-stats/",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "google-auth-library": "^0.10.0",
