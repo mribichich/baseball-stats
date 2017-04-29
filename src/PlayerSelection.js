@@ -4,7 +4,7 @@ class PlayerSelection extends Component {
   handleSelect(e) {
     this
       .props
-      .handleSelect(parseInt(e.target.value));
+      .handleSelect(parseInt(e.target.value, 0));
   }
 
   render() {

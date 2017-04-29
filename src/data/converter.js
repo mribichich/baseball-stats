@@ -1,4 +1,4 @@
-String.prototype.insertAt = function (index, string) {
+function insertAt(index, string) {
   return this.substr(0, index) + string + this.substr(index);
 }
 
