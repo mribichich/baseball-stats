@@ -1,10 +1,16 @@
+image: node:7.9.0
+
 pages:
   stage: deploy
+  cache:
+    paths:
+      - node_modules
   script:
-  - yarn build
-  - mkdir .public
-  - cp -r build/* .public
-  - mv .public public
+    - yarn
+    - yarn build
+    - mkdir .public
+    - cp -r build/* .public
+    - mv .public public
   artifacts:
     paths:
     - public
