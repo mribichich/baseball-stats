@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import VendorPrefix from 'react-vendor-prefix';
 import assign from 'object-assign';
 
@@ -28,6 +29,6 @@ export default class Flex extends Component {
 }
 
 Flex.propTypes = {
-  className: React.PropTypes.string,
-  style: React.PropTypes.object
+  className: PropTypes.string,
+  style: PropTypes.object
 };

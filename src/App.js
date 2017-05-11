@@ -5,17 +5,20 @@ import './App.css';
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as _ from 'lodash';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 import DATA_CSV from './data/dataCsv';
 import {convertStats} from './data/converter';
-import TopStatsCards from './TopStatsCards';
-import TableStats from './TableStats';
-import PlayerSelection from './PlayerSelection';
-import MinimumAtBatsSelection from './MinimumAtBatsSelection';
+import Home from './Home';
+import {loadPlayers} from './actions';
 
 class App extends Component {
   stats;
   players;
+
+static contextTypes = {
+        store: React.PropTypes.object
+    }
 
   componentWillMount() {
     this.stats = convertStats(DATA_CSV);
@@ -23,6 +26,8 @@ class App extends Component {
     this.players = _.orderBy(this.stats.map(m => ({number: m.number, name: m.name})), (m) => m.name);
 
     this.setState({selectedPlayer: null, stats: this.stats})
+
+    this.context.store.dispatch(loadPlayers(this.players));
   }
 
   filterStats(stats, selectedMinimumAtBats) {
@@ -47,24 +52,26 @@ class App extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
-        <div className="App">
-          <div className="App-header">
-            <h2>Estadisticas A3 2017</h2>
+      <BrowserRouter>
+        <MuiThemeProvider>
+          <div className="App">
+            <div className="App-header">
+              <h2>Estadisticas A3 2017</h2>
+            </div>
+
+            <Route
+              path='/'
+              render={() => ( 
+                <Home stats={this.state.stats} 
+                  selectedPlayer={this.state.selectedPlayer} 
+                  onPlayerSelect={(number) => this.handleSelect(number)} 
+                  onClickHandler={(value) => this.onClickHandler(value)} 
+                /> 
+              )}/>
+            {/*<Route path='/address' component={Address} />*/}
           </div>
-          <MinimumAtBatsSelection onClickHandler={(value) => this.onClickHandler(value)}/>
-
-          <PlayerSelection
-            players={this.players}
-            handleSelect={(number) => this.handleSelect(number)}/>
-
-          <TopStatsCards
-            stats={this.state.stats}
-            selectedPlayer={this.state.selectedPlayer}/>
-          <br/>
-          <TableStats stats={this.state.stats} selectedPlayer={this.state.selectedPlayer}></TableStats>
-        </div>
-      </MuiThemeProvider>
+        </MuiThemeProvider>
+      </BrowserRouter>
     );
   }
 }
