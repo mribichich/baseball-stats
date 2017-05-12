@@ -46,20 +46,20 @@ class TableStats extends Component {
             <th onClick={(e) => this.handleOnClick(e, 'home_runs')}>HR</th>
             <th onClick={(e) => this.handleOnClick(e, 'runsOverErrors')}>ROE</th>
             <th onClick={(e) => this.handleOnClick(e, 'hitByPitch')}>HBP</th>
-            <th onClick={(e) => this.handleOnClick(e, 'sac_flies')}>sac_flies</th>
-            <th onClick={(e) => this.handleOnClick(e, 'sac_hits')}>sac_hits</th>
+            <th onClick={(e) => this.handleOnClick(e, 'sac_flies')}>SF</th>
+            <th onClick={(e) => this.handleOnClick(e, 'sac_hits')}>SAC</th>
             <th onClick={(e) => this.handleOnClick(e, 'walks')}>BB</th>
-            <th onClick={(e) => this.handleOnClick(e, 'walksAvg')}>BB avg</th>
+            <th onClick={(e) => this.handleOnClick(e, 'walksAvg')}>BB %</th>
             <th onClick={(e) => this.handleOnClick(e, 'strikeOuts')}>SO</th>
-            <th onClick={(e) => this.handleOnClick(e, 'strikeOutsAvg')}>SO avg</th>
+            <th onClick={(e) => this.handleOnClick(e, 'strikeOutsAvg')}>SO %</th>
             <th onClick={(e) => this.handleOnClick(e, 'rbi')}>RBI</th>
-            <th onClick={(e) => this.handleOnClick(e, 'runs')}>runs</th>
-            <th onClick={(e) => this.handleOnClick(e, 'avg')}>avg</th>
-            <th onClick={(e) => this.handleOnClick(e, 'obp')}>obp</th>
-            <th onClick={(e) => this.handleOnClick(e, 'slg')}>slg</th>
+            <th onClick={(e) => this.handleOnClick(e, 'runs')}>RUNS</th>
+            <th onClick={(e) => this.handleOnClick(e, 'avg')}>AVG</th>
+            <th onClick={(e) => this.handleOnClick(e, 'obp')}>OBP</th>
+            <th onClick={(e) => this.handleOnClick(e, 'slg')}>SLG</th>
             <th onClick={(e) => this.handleOnClick(e, 'stolenBases')}>SB</th>
             <th onClick={(e) => this.handleOnClick(e, 'stolenBasesAttempts')}>SB Attempts</th>
-            <th onClick={(e) => this.handleOnClick(e, 'stolenBasesAvg')}>SB avg</th>
+            <th onClick={(e) => this.handleOnClick(e, 'stolenBasesAvg')}>SB %</th>
           </tr>
         </thead>
 

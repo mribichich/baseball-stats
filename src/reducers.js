@@ -1,8 +1,6 @@
-import {combineReducers} from 'redux'
-import {LOAD_PLAYERS} from './actions'
-// const {SHOW_ALL} = VisibilityFilters function visibilityFilter(state =
-// SHOW_ALL, action) {   switch (action.type) {     case SET_VISIBILITY_FILTER:
-//     return action.filter     default:       return state   } }
+import { combineReducers } from 'redux';
+
+import { LOAD_PLAYERS, HIGHLIGHT_PLAYER, SET_STATS } from './actions';
 
 function players(state = [], action) {
 		switch (action.type) {
@@ -14,9 +12,30 @@ function players(state = [], action) {
 		}
 }
 
+function stats(state = [], action) {
+		switch (action.type) {
+				case SET_STATS:
+						return [...action.stats]
+
+				default:
+						return state
+		}
+}
+
+function highlightPlayer(state=null, action) {
+		switch (action.type) {
+				case HIGHLIGHT_PLAYER:
+						return action.player
+
+				default:
+						return state
+		}
+}
+
 const reducers = combineReducers({
-		// visibilityFilter,
-		players
+	players,
+	highlightPlayer,
+	stats
 });
 
 export default reducers

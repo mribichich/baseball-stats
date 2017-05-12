@@ -1,16 +1,14 @@
 import './TopStatCard.css';
 
 import React, {Component} from 'react';
-import {
-  Card,
-  // CardActions, CardHeader, CardMedia,
+import { Card, // CardActions, CardHeader, CardMedia,
   CardTitle,
   CardText
 } from 'material-ui/Card';
 import * as _ from 'lodash';
+
 import Layout from './Layout';
 import Flex from './Flex';
-
 import TopStatCardWinner from './TopStatCardWinner';
 import TopStatCardRunnerUps from './TopStatCardRunnerUps';
 

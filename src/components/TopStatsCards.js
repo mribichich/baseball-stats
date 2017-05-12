@@ -4,7 +4,7 @@ import Flex from './Flex';
 import * as _ from 'lodash';
 
 import TopStatCard from './TopStatCard';
-import {calculateTopStats} from './core/topStats';
+import {calculateTopStats} from '../core/topStats';
 
 export default class TopStatsCards extends Component {
   componentWillMount() {

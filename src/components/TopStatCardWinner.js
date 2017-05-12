@@ -1,10 +1,10 @@
 import './TopStatCardWinner.css';
 
 import React, {Component} from 'react';
+
 import Layout from './Layout';
 import Flex from './Flex';
-
-import playerFaces, {NO_FACE} from './core/playerFaces'
+import playerFaces, { NO_FACE } from '../core/playerFaces'
 
 class TopStatCardWinner extends Component {
   render() {
