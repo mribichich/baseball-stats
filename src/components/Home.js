@@ -8,7 +8,7 @@ import MinimumAtBatsSelection from './MinimumAtBatsSelection';
 import Layout from './Layout';
 import Flex from './Flex';
 
-import { highlightPlayer, setStats, setMinimunPlateAppearances } from '../actions';
+import { highlightPlayer, setMinimunPlateAppearances } from '../actions';
 
 const filterStats = (stats, selectedMinimumAtBats) => {
   return selectedMinimumAtBats
