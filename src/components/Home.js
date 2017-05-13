@@ -26,11 +26,11 @@ const Home = ({players, stats, highlightPlayer, onPlayerSelected, onStatsFiltere
   return (
     <div>
       <Layout type="row" style={{margin: '0 20px 20px 20px'}}>
-       <Flex>
-          <MinimumAtBatsSelection onClickHandler={(value)=> onClickHandler(value)} />
+       <Flex style={{flexGrow: 0}}>
+          <MinimumAtBatsSelection  onClickHandler={(value)=> onClickHandler(value)} />
        </Flex>
 
-       <Flex>
+       <Flex style={{flexGrow: 0, marginLeft: 20}}>
           <PlayerSelection
             players={players}
             selectedPlayer={highlightPlayer}

@@ -3,25 +3,21 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class MinimumAtBatsSelection extends Component {
-  onClickHandler(e) {
-    this.props.onClickHandler(parseInt(this.refs.input.value, 0));
+  handleChange(event) {
+    this.props.onClickHandler(parseInt(event.target.value, 0));
   }
 
   render() {
     return (
       <div>
-        {/*<label htmlFor="">Minimo de Apariciones al Plato &nbsp;</label>
-        <input ref="input" type="number" min="0"/>
-        <button onClick={(e) => this.onClickHandler()}>Filtrar</button>*/}
-
         <TextField
-          hintText="Hint Text"
+        style={{width: 100}}
+        defaultValue={0}
           floatingLabelText="Minimo PA"
            type="number" 
            min="0"
-           ref="input"
+          onChange={(event)=>this.handleChange(event)}
         />
-         <RaisedButton label="Filtrar"  onClick={(e) => this.onClickHandler()} />
       </div>
     );
   }
