@@ -6,7 +6,6 @@ import {
   TableHeader,
   TableHeaderColumn,
   TableRow,
-  TableRowColumn,
 } from 'material-ui/Table';
 
 import TableStatsRow from './TableStatsRow';
