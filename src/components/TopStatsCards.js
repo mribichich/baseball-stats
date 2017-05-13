@@ -25,7 +25,7 @@ export default class TopStatsCards extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{margin: '20px'}}>
         <Layout type="row">
           {this
             .topStats1

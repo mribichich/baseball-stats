@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class MinimumAtBatsSelection extends Component {
   onClickHandler(e) {
@@ -8,9 +10,18 @@ class MinimumAtBatsSelection extends Component {
   render() {
     return (
       <div>
-        <label htmlFor="">Minimo de Apariciones al Plato &nbsp;</label>
+        {/*<label htmlFor="">Minimo de Apariciones al Plato &nbsp;</label>
         <input ref="input" type="number" min="0"/>
-        <button onClick={(e) => this.onClickHandler()}>Filtrar</button>
+        <button onClick={(e) => this.onClickHandler()}>Filtrar</button>*/}
+
+        <TextField
+          hintText="Hint Text"
+          floatingLabelText="Minimo PA"
+           type="number" 
+           min="0"
+           ref="input"
+        />
+         <RaisedButton label="Filtrar"  onClick={(e) => this.onClickHandler()} />
       </div>
     );
   }

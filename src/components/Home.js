@@ -17,7 +17,7 @@ import Flex from './Flex';
   }
 
 const Home = ({players, stats, highlightPlayer, onPlayerSelected, onStatsFiltered}) => {
- const onClickHandler=(value)=> {
+  const onClickHandler=(value)=> {
     const filteredStats = filterStats(stats, value);
 
    onStatsFiltered(filteredStats);
@@ -25,16 +25,16 @@ const Home = ({players, stats, highlightPlayer, onPlayerSelected, onStatsFiltere
 
   return (
     <div>
-     <Layout>
+      <Layout type="row" style={{margin: '0 20px 20px 20px'}}>
        <Flex>
           <MinimumAtBatsSelection onClickHandler={(value)=> onClickHandler(value)} />
        </Flex>
 
        <Flex>
-      <PlayerSelection
-        players={players}
-        selectedPlayer={highlightPlayer}
-        handleSelect={onPlayerSelected} />
+          <PlayerSelection
+            players={players}
+            selectedPlayer={highlightPlayer}
+            handleSelect={onPlayerSelected} />
        </Flex>
      </Layout>
 
