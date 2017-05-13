@@ -27,7 +27,7 @@ class TopStatCardWinner extends Component {
           </span>*/}
         </Flex>
 
-        <Flex>
+        <Flex style={{textAlign: 'center'}}>
           {/*<h3>{this.props.stats.title}</h3>
 
                   <br/> */}

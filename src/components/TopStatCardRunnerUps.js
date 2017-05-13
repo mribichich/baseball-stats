@@ -20,11 +20,14 @@ class TopStatCardRunnerUps extends Component {
             }
 
             return (
-              <Layout key={m.name} className={selectedPlayerClass}>
-                <Flex>
+              <Layout key={m.name} 
+                className={selectedPlayerClass}>
+                <Flex style={{flexGrow: 2}}>
                   <span>{m.name}</span>
                 </Flex>
-                <Flex>{m.value}</Flex>
+                <Flex style={{textAlign: 'center'}}>
+                  {m.value}
+                </Flex>
               </Layout>
             )
           })}

@@ -1,10 +1,7 @@
 import './TopStatCard.css';
 
 import React, {Component} from 'react';
-import { Card, // CardActions, CardHeader, CardMedia,
-  CardTitle,
-  CardText
-} from 'material-ui/Card';
+import { Card, CardTitle, CardText } from 'material-ui/Card';
 import * as _ from 'lodash';
 
 import Layout from './Layout';
@@ -23,7 +20,9 @@ export default class TopStatCard extends Component {
         <CardText>
           <Layout type="column">
             <Flex>
-              <TopStatCardWinner winner={winner} selectedPlayer={this.props.selectedPlayer}/>
+              <TopStatCardWinner 
+                winner={winner} 
+                selectedPlayer={this.props.selectedPlayer}/>
             </Flex>
             <br/>
             <Flex>

@@ -53,7 +53,7 @@ const mapStateToProps = (state) => {
   return {
     players: state.players,
     highlightPlayer: state.highlightPlayer,
-    stats:state.stats
+    stats: state.stats
   }
 }
 
