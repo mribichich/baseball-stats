@@ -6,7 +6,7 @@ class PlayerSelection extends Component {
   render() {
     return (
      <div>
-        {/*<SelectField
+        <SelectField
           floatingLabelText="Resaltar Jugador"
           value={this.props.selectedPlayer}
           onChange={(event, index, value) => this.props.handleSelect(value)}
@@ -17,7 +17,7 @@ class PlayerSelection extends Component {
             .map(m => (
               <MenuItem key={m.number} value={m} primaryText={m.name} />
             ))}
-      </SelectField>*/}
+      </SelectField>
      </div>
     );
   }

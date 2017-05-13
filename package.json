@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "flow-bin": "^0.42.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "^0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
