@@ -11,8 +11,8 @@ import {
 import TableStatsRow from './TableStatsRow';
 
 const cellStyle = {
-  'padding-left': 12,
-  'padding-right': 12,
+  paddingLeft: 12,
+  paddingRight: 12,
 }
 
 const nameCellStyle = {

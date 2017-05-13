@@ -3,6 +3,7 @@
 import './App.css';
 
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as _ from 'lodash';
 import {BrowserRouter, Route} from 'react-router-dom';
@@ -17,7 +18,7 @@ class App extends Component {
   players;
 
   static contextTypes = {
-        store: React.PropTypes.object
+        store: PropTypes.object
     }
 
   componentWillMount() {
