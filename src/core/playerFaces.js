@@ -2,7 +2,9 @@ import noFace from '../assets/faces/no_face.png';
 import face2 from '../assets/faces/2.jpg';
 import face7 from '../assets/faces/7.jpg';
 import face24 from '../assets/faces/24.jpg';
+import face31 from '../assets/faces/31.png';
 import face33 from '../assets/faces/33.jpg';
+import face36 from '../assets/faces/36.png';
 import face77 from '../assets/faces/77.jpg';
 import face114 from '../assets/faces/114.jpg';
 
@@ -40,7 +42,7 @@ export default[
     image : null // getPath('25.jpg')
   }, {
     number : 31,
-    image : null // getPath('31.jpg')
+    image : face31,
   }, {
     number : 32,
     image : null // getPath('32.jpg')
@@ -49,7 +51,7 @@ export default[
     image : face33, // getPath('33.jpg')
   }, {
     number : 36,
-    image : null // getPath('36.jpg')
+    image : face36,
   }, {
     number : 45,
     image : null // getPath('45.jpg')

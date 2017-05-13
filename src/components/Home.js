@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { highlightPlayer, setStats } from '../actions';
-
 import TopStatsCards from './TopStatsCards';
 import TableStats from './TableStats';
 import PlayerSelection from './PlayerSelection';
@@ -10,24 +8,31 @@ import MinimumAtBatsSelection from './MinimumAtBatsSelection';
 import Layout from './Layout';
 import Flex from './Flex';
 
-  const filterStats=(stats, selectedMinimumAtBats)=> {
-    return selectedMinimumAtBats
-      ? [...stats.filter(f => f.plateAppearances >= selectedMinimumAtBats)]
-      : stats;
-  }
+import { highlightPlayer, setStats, setMinimunPlateAppearances } from '../actions';
 
-const Home = ({players, stats, highlightPlayer, onPlayerSelected, onStatsFiltered}) => {
-  const onClickHandler=(value)=> {
-    const filteredStats = filterStats(stats, value);
+const filterStats = (stats, selectedMinimumAtBats) => {
+  return selectedMinimumAtBats
+    ? [...stats.filter(f => f.plateAppearances >= selectedMinimumAtBats)]
+    : stats;
+}
 
-   onStatsFiltered(filteredStats);
-  }
+const Home = ({
+  players, 
+  stats, 
+  highlightPlayer, 
+  minimumPlateAppearances, 
+  selectedMinimumPlateAppearances, 
+  onPlayerSelected, 
+  onMinimumPlateAppearancesSelected
+}) => {
+  const min = selectedMinimumPlateAppearances || minimumPlateAppearances;
+  const filteredStats = filterStats(stats, min);
 
   return (
     <div>
       <Layout type="row" style={{margin: '0 20px 20px 20px'}}>
        <Flex style={{flexGrow: 0}}>
-          <MinimumAtBatsSelection  onClickHandler={(value)=> onClickHandler(value)} />
+          <MinimumAtBatsSelection min={minimumPlateAppearances} onChanged={(value)=> onMinimumPlateAppearancesSelected(value)} />
        </Flex>
 
        <Flex style={{flexGrow: 0, marginLeft: 20}}>
@@ -39,12 +44,12 @@ const Home = ({players, stats, highlightPlayer, onPlayerSelected, onStatsFiltere
      </Layout>
 
       <TopStatsCards
-        stats={stats}
+        stats={filteredStats}
         selectedPlayer={highlightPlayer} />
 
       <br/>
 
-      <TableStats stats={stats} selectedPlayer={highlightPlayer}></TableStats>
+      <TableStats stats={filteredStats} selectedPlayer={highlightPlayer}></TableStats>
     </div>
   );
 }
@@ -53,7 +58,9 @@ const mapStateToProps = (state) => {
   return {
     players: state.players,
     highlightPlayer: state.highlightPlayer,
-    stats: state.stats
+    stats: state.stats,
+    minimumPlateAppearances: state.minimumPlateAppearances,
+    selectedMinimumPlateAppearances: state.selectedMinimunPlateAppearances,
   }
 }
 
@@ -62,8 +69,8 @@ const mapDispatchToProps = (dispatch) => {
     onPlayerSelected: (player) => {
       dispatch(highlightPlayer(player))
     },
-    onStatsFiltered: (stats) => {
-      dispatch(setStats(stats))
+    onMinimumPlateAppearancesSelected: (min) => {
+      dispatch(setMinimunPlateAppearances(min))
     }
   }
 }

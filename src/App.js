@@ -28,6 +28,8 @@ class App extends Component {
 
     this.context.store.dispatch(loadPlayers(this.players));
     this.context.store.dispatch(setStats(this.stats));
+
+    
   }
 
   render() {
