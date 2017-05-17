@@ -4462,10 +4462,6 @@ react-transition-group@^1.1.2:
     prop-types "^15.5.6"
     warning "^3.0.0"
 
-react-vendor-prefix@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-vendor-prefix/-/react-vendor-prefix-0.0.1.tgz#28dcfc97959b38f08a5a76b80a15a9498d3b007c"
-
 react@^15.5.4:
   version "15.5.4"
   resolved "https://registry.yarnpkg.com/react/-/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
