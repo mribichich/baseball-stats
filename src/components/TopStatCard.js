@@ -9,6 +9,12 @@ import TopStatCardRunnerUps from './TopStatCardRunnerUps';
 
 const cardStyle = {
   margin: 10,
+  padding: 16,
+}
+
+const cardTitleStyle = {
+  textAlign: 'center',
+  // fontWeight: 'bold',
 }
 
 export default class TopStatCard extends Component {
@@ -18,7 +24,7 @@ export default class TopStatCard extends Component {
 
     return (
       <Card style={cardStyle}>
-        <CardTitle title={this.props.stats.title}/>
+        <CardTitle style={cardTitleStyle} title={this.props.stats.title}/>
         <CardText>
           <Layout type="column">
             <Flex>

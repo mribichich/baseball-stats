@@ -19,13 +19,11 @@ export default class TopStatsCards extends Component {
 
     this.topStats1 = _.take(topStats, 5);
     this.topStats2 = _.takeRight(topStats, 5);
-
-    // this.setState({stats: orderedStats})
   }
 
   render() {
     return (
-      <div style={{margin: '20px'}}>
+      <div style={{margin: 20}}>
         <Layout type="row">
           {this
             .topStats1

@@ -47,7 +47,7 @@ const Home = ({
         stats={filteredStats}
         selectedPlayer={highlightPlayer} />
 
-      <br/>
+      <br />
 
       <TableStats stats={filteredStats} selectedPlayer={highlightPlayer}></TableStats>
     </div>
