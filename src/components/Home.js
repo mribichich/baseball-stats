@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import TopStatsCards from './TopStatsCards';
-import TableStats from './TableStats';
+import TableStats from './TableStats/TableStats';
 import PlayerSelection from './PlayerSelection';
 import MinimumAtBatsSelection from './MinimumAtBatsSelection';
 import Layout from './Layout';

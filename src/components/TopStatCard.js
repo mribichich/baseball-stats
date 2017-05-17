@@ -1,5 +1,3 @@
-import './TopStatCard.css';
-
 import React, {Component} from 'react';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 import * as _ from 'lodash';
@@ -9,13 +7,17 @@ import Flex from './Flex';
 import TopStatCardWinner from './TopStatCardWinner';
 import TopStatCardRunnerUps from './TopStatCardRunnerUps';
 
+const cardStyle = {
+  margin: 10,
+}
+
 export default class TopStatCard extends Component {
   render() {
     const winner = this.props.stats.tops[0];
     const runnerUps = _.tail(this.props.stats.tops);
 
     return (
-      <Card className="topStatCard">
+      <Card style={cardStyle}>
         <CardTitle title={this.props.stats.title}/>
         <CardText>
           <Layout type="column">

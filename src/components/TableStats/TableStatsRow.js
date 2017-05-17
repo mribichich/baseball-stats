@@ -1,10 +1,12 @@
-import './TableStatsRow.css';
-
 import React, {Component} from 'react';
 import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+
+const playerSelectedStyle = {
+  color: 'blue'
+}
 
 const cellStyle = {
   paddingLeft: 12,
@@ -20,14 +22,14 @@ class TableStatsRow extends Component {
   render() {
     const stats = this.props.stats;
 
-    let selectedPlayerClass;
+    let tableRowStyles;
 
     if (this.props.selectedPlayer && this.props.selectedPlayer.number === stats.number) {
-      selectedPlayerClass = 'TableStatsRow__playerSelected';
+      tableRowStyles = playerSelectedStyle;
     }
 
     return (
-      <TableRow className={selectedPlayerClass}>
+      <TableRow style={tableRowStyles}>
         <TableRowColumn style={cellStyle}>{stats.number}</TableRowColumn>
         <TableRowColumn style={nameCellStyle}>{stats.name}</TableRowColumn>
         <TableRowColumn style={cellStyle}>{stats.plateAppearances}</TableRowColumn>
