@@ -25,12 +25,6 @@ const stats = convertStats(DATA_CSV);
 const players = _.orderBy(stats.map(m => ({number: m.number, name: m.name})), (m) => m.name);
 const minimumPlateAppearances = parseInt(_.maxBy(stats.map(m => m.plateAppearances)) * 0.30, 0);
 
-const initialState = {
-  stats,
-  players,
-  minimumPlateAppearances,
-}
-
 let store = createStore(reducers);
 
 store.dispatch(loadPlayers(players));
