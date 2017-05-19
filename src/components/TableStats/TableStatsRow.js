@@ -15,7 +15,7 @@ const cellStyle = {
 
 const nameCellStyle = {
   ...cellStyle,
-  width: 150
+  width: 180
 }
 
 class TableStatsRow extends Component {
@@ -44,9 +44,9 @@ class TableStatsRow extends Component {
         <TableRowColumn style={cellStyle}>{stats.sac_flies}</TableRowColumn>
         <TableRowColumn style={cellStyle}>{stats.sac_hits}</TableRowColumn>
         <TableRowColumn style={cellStyle}>{stats.walks}</TableRowColumn>
-        {/*<TableRowColumn style={cellStyle}>{stats.walksAvg}</TableRowColumn>*/}
+        <TableRowColumn style={cellStyle}>{stats.walksAvg}</TableRowColumn>
         <TableRowColumn style={cellStyle}>{stats.strikeOuts}</TableRowColumn>
-        {/*<TableRowColumn style={cellStyle}>{stats.strikeOutsAvg}</TableRowColumn>*/}
+        <TableRowColumn style={cellStyle}>{stats.strikeOutsAvg}</TableRowColumn>
         <TableRowColumn style={cellStyle}>{stats.rbi}</TableRowColumn>
         <TableRowColumn style={cellStyle}>{stats.runs}</TableRowColumn>
         <TableRowColumn style={cellStyle}>{stats.avg}</TableRowColumn>

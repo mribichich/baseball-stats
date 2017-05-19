@@ -5,12 +5,15 @@ export function calculateTopStats(stats) {
   const hitsStats = _.orderBy(stats, m => m.hits, 'desc');
   const runsStats = _.orderBy(stats, m => m.runs, 'desc');
   const rbiStats = _.orderBy(stats, m => m.rbi, 'desc');
-  const home_runsStats = _.orderBy(stats, m => m.home_runs, 'desc');
+  // const home_runsStats = _.orderBy(stats, m => m.home_runs, 'desc');
+  const singlesStats = _.orderBy(stats, m => m.singles, 'desc');
   const doublesStats = _.orderBy(stats, m => m.doubles, 'desc');
   const triplesStats = _.orderBy(stats, m => m.triples, 'desc');
   const obpStats = _.orderBy(stats, m => m.obp, 'desc');
   const slgStats = _.orderBy(stats, m => m.slg, 'desc');
   const stolenBasesStats = _.orderBy(stats, m => m.stolenBases, 'desc');
+  const walksStats = _.orderBy(stats, m => m.walks, 'desc');
+  const strikeOutsStats = _.orderBy(stats, m => m.strikeOuts, 'desc');
 
   return [
     {
@@ -28,6 +31,11 @@ export function calculateTopStats(stats) {
       tops: _
         .take(rbiStats, 5)
         .map(m => map(m, (f) => f.rbi))
+    }, {
+      title: '1B',
+      tops: _
+        .take(singlesStats, 5)
+        .map(m => map(m, (f) => f.singles))
     }, {
       title: '2B',
       tops: _
@@ -58,11 +66,24 @@ export function calculateTopStats(stats) {
       tops: _
         .take(stolenBasesStats, 5)
         .map(m => map(m, (f) => f.stolenBases))
-    }, {
-      title: 'HR',
+    }, 
+    // {
+    //   title: 'HR',
+    //   tops: _
+    //     .take(home_runsStats, 5)
+    //     .map(m => map(m, (f) => f.home_runs))
+    // }
+    {
+      title: 'BB',
       tops: _
-        .take(home_runsStats, 5)
-        .map(m => map(m, (f) => f.home_runs))
+        .take(walksStats, 5)
+        .map(m => map(m, (f) => f.walks))
+    },
+    {
+      title: 'SO',
+      tops: _
+        .take(strikeOutsStats, 5)
+        .map(m => map(m, (f) => f.strikeOuts))
     }
   ]
 }

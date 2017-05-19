@@ -2,6 +2,7 @@ import noFace from '../assets/faces/no_face.png';
 import face2 from '../assets/faces/2.jpg';
 import face7 from '../assets/faces/7.jpg';
 import face24 from '../assets/faces/24.jpg';
+import face25 from '../assets/faces/25.png';
 import face31 from '../assets/faces/31.png';
 import face33 from '../assets/faces/33.jpg';
 import face36 from '../assets/faces/36.png';
@@ -18,10 +19,10 @@ export const NO_FACE = noFace;
 export default[
   {
     number : 2,
-    image : face2, // getPath('2.jpg')
+    image : face2, 
   }, {
     number : 7,
-    image : face7, // getPath('7.jpg')
+    image : face7, 
   }, {
     number : 12,
     image : null // getPath('12.jpg')
@@ -36,10 +37,10 @@ export default[
     image : null // getPath('23.jpg')
   }, {
     number : 24,
-    image : face24, // getPath('24.jpg')
+    image : face24,
   }, {
     number : 25,
-    image : null // getPath('25.jpg')
+    image : face25
   }, {
     number : 31,
     image : face31,
@@ -48,7 +49,7 @@ export default[
     image : null // getPath('32.jpg')
   }, {
     number : 33,
-    image : face33, // getPath('33.jpg')
+    image : face33, 
   }, {
     number : 36,
     image : face36,
@@ -63,7 +64,7 @@ export default[
     image : null // getPath('72.jpg')
   }, {
     number : 77,
-    image : face77, // getPath('77.jpg')
+    image : face77, 
   }, {
     number : 99,
     image : null // getPath('99.jpg')
@@ -75,7 +76,7 @@ export default[
     image : null // getPath('113.jpg')
   }, {
     number : 114,
-    image : face114, // getPath('114.jpg')
+    image : face114,
   }, {
     number : 115,
     image : null // getPath('115.jpg')

@@ -10,8 +10,8 @@ export default class TopStatsCards extends Component {
   componentWillMount() {
     const topStats = calculateTopStats(this.props.stats);
 
-    this.topStats1 = _.take(topStats, 5);
-    this.topStats2 = _.takeRight(topStats, 5);
+    this.topStats1 = _.take(topStats, 6);
+    this.topStats2 = _.takeRight(topStats, 6);
   }
 
   componentWillReceiveProps(nextProps, nextContext) {

@@ -19,7 +19,7 @@ const cellStyle = {
 
 const nameCellStyle = {
   ...cellStyle,
-  width: 150
+  width: 180
 }
 
 class TableStats extends Component {
