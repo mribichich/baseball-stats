@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-class PlayerSelection extends Component {  
-  render() {
-    return (
+const PlayerSelection = ({players, selectedPlayer, handleSelect}) => {
+  return (
      <div>
         <SelectField
           floatingLabelText="Resaltar Jugador"
-          value={this.props.selectedPlayer}
-          onChange={(event, index, value) => this.props.handleSelect(value)}
+          value={selectedPlayer}
+          onChange={(event, index, value) => handleSelect(value)}
         >
           <MenuItem value={null} primaryText="" />
 
-          {this.props.players
+          {players
             .map(m => (
               <MenuItem key={m.number} value={m} primaryText={m.name} />
             ))}
@@ -21,6 +21,11 @@ class PlayerSelection extends Component {
      </div>
     );
   }
+
+PlayerSelection.PropTypes = {
+  players: PropTypes.array,
+  selectedPlayer: PropTypes.object,
+  handleSelect: PropTypes.func
 }
 
 export default PlayerSelection;
