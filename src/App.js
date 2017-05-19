@@ -2,35 +2,14 @@
 
 import './App.css';
 
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import * as _ from 'lodash';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-import DATA_CSV from './data/dataCsv';
-import { convertStats } from './data/converter';
 import Home from './components/Home';
-import { loadPlayers, setStats } from './actions';
 
-class App extends Component {
-  stats;
-  players;
-
-  static contextTypes = {
-        store: PropTypes.object
-    }
-
-  componentWillMount() {
-    this.stats = convertStats(DATA_CSV);
-
-    this.players = _.orderBy(this.stats.map(m => ({number: m.number, name: m.name})), (m) => m.name);
-
-    this.context.store.dispatch(loadPlayers(this.players));
-    this.context.store.dispatch(setStats(this.stats));
-  }
-
-  render() {
+const App = () => {
     return (
       <BrowserRouter>
         <MuiThemeProvider>
@@ -43,6 +22,9 @@ class App extends Component {
       </BrowserRouter>
     );
   }
+
+App.contextTypes = {
+  store: PropTypes.object
 }
 
 export default App;

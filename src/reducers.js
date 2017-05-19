@@ -43,7 +43,7 @@ function minimumPlateAppearances(state = 0, action) {
 		}
 }
 
-function selectedMinimunPlateAppearances(state = null, action) {
+function selectedMinimumPlateAppearances(state = null, action) {
 		switch (action.type) {
 				case SET_MIN_PA:
 						return action.min;
@@ -57,8 +57,8 @@ const reducers = combineReducers({
 	players,
 	highlightPlayer,
 	stats,
-	minimumPlateAppearances,
-	selectedMinimunPlateAppearances,
+  minimumPlateAppearances,
+	selectedMinimumPlateAppearances,
 });
 
-export default reducers
+export default reducers;

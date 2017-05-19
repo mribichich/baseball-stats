@@ -23,6 +23,7 @@ const Home = ({
   selectedMinimumPlateAppearances,
   // onPlayerSelected,
 }) => {
+
   const filteredStats = filterStats(stats, selectedMinimumPlateAppearances);
 
   return (
