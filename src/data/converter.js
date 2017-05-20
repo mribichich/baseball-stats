@@ -1,5 +1,6 @@
-// function insertAt(index, string) {   return this.substr(0, index) + string +
-// this.substr(index); }
+// function insertAt(value, index, string) {   
+//   return value.substr(0, index) + string + value.substr(index); 
+// }
 
 export function convertPlayer(csv) {
   csv = csv.replace(/"([^"]*),([^"]*)"/g, "$1$2")

@@ -17,13 +17,10 @@ const filterStats = (stats, selectedMinimumAtBats) => {
 }
 
 const Home = ({
-  // players, 
   stats, 
   highlightPlayer, 
   selectedMinimumPlateAppearances,
-  // onPlayerSelected,
 }) => {
-
   const filteredStats = filterStats(stats, selectedMinimumPlateAppearances);
 
   return (
@@ -51,7 +48,6 @@ const Home = ({
 
 const mapStateToProps = (state) => {
   return {
-    // players: state.players,
     stats: state.stats,
     highlightPlayer: state.highlightPlayer,
     selectedMinimumPlateAppearances: state.selectedMinimumPlateAppearances || state.minimumPlateAppearances,

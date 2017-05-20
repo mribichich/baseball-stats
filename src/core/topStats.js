@@ -20,52 +20,52 @@ export function calculateTopStats(stats) {
       title: 'HITS',
       tops: _
         .take(hitsStats, 5)
-        .map(m => map(m, (f) => f.hits))
+        .map(m => map(m, (f) => f.hits.toFixed(0))),
     }, {
       title: 'RUNS',
       tops: _
         .take(runsStats, 5)
-        .map(m => map(m, (f) => f.runs))
+        .map(m => map(m, (f) => f.runs.toFixed(0))),
     }, {
       title: 'RBI',
       tops: _
         .take(rbiStats, 5)
-        .map(m => map(m, (f) => f.rbi))
+        .map(m => map(m, (f) => f.rbi.toFixed(0))),
     }, {
       title: '1B',
       tops: _
         .take(singlesStats, 5)
-        .map(m => map(m, (f) => f.singles))
+        .map(m => map(m, (f) => f.singles.toFixed(0))),
     }, {
       title: '2B',
       tops: _
         .take(doublesStats, 5)
-        .map(m => map(m, (f) => f.doubles))
+        .map(m => map(m, (f) => f.doubles.toFixed(0)))
     }, {
       title: '3B',
       tops: _
         .take(triplesStats, 5)
-        .map(m => map(m, (f) => f.triples))
+        .map(m => map(m, (f) => f.triples)),
     }, {
       title: 'AVG',
       tops: _
         .take(avgStats, 5)
-        .map(m => map(m, (f) => f.avg))
+        .map(m => map(m, (f) => f.avg.toFixed(3).slice(1))),
     }, {
       title: 'OBP',
       tops: _
         .take(obpStats, 5)
-        .map(m => map(m, (f) => f.obp))
+        .map(m => map(m, (f) => f.obp.toFixed(3).slice(1))),
     }, {
       title: 'SLG',
       tops: _
         .take(slgStats, 5)
-        .map(m => map(m, (f) => f.slg))
+        .map(m => map(m, (f) => f.slg.toFixed(3).slice(1))),
     }, {
       title: 'SB',
       tops: _
         .take(stolenBasesStats, 5)
-        .map(m => map(m, (f) => f.stolenBases))
+        .map(m => map(m, (f) => f.stolenBases.toFixed(0))),
     }, 
     // {
     //   title: 'HR',
@@ -77,13 +77,13 @@ export function calculateTopStats(stats) {
       title: 'BB',
       tops: _
         .take(walksStats, 5)
-        .map(m => map(m, (f) => f.walks))
+        .map(m => map(m, (f) => f.walks.toFixed(0))),
     },
     {
       title: 'SO',
       tops: _
         .take(strikeOutsStats, 5)
-        .map(m => map(m, (f) => f.strikeOuts))
+        .map(m => map(m, (f) => f.strikeOuts.toFixed(0))),
     }
   ]
 }

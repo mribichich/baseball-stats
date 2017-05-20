@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 import * as _ from 'lodash';
 
@@ -17,30 +17,28 @@ const cardTitleStyle = {
   // fontWeight: 'bold',
 }
 
-export default class TopStatCard extends Component {
-  render() {
-    const winner = this.props.stats.tops[0];
-    const runnerUps = _.tail(this.props.stats.tops);
+export default ({stats, selectedPlayer}) => {
+  const winner = stats.tops[0];
+  const runnerUps = _.tail(stats.tops);
 
-    return (
-      <Card style={cardStyle}>
-        <CardTitle style={cardTitleStyle} title={this.props.stats.title}/>
-        <CardText>
-          <Layout type="column">
-            <Flex>
-              <TopStatCardWinner 
-                winner={winner} 
-                selectedPlayer={this.props.selectedPlayer}/>
-            </Flex>
-            <br/>
-            <Flex>
-              <TopStatCardRunnerUps
-                runnerUps={runnerUps}
-                selectedPlayer={this.props.selectedPlayer}/>
-            </Flex>
-          </Layout>
-        </CardText>
-      </Card>
-    )
-  }
+  return (
+    <Card style={cardStyle}>
+      <CardTitle style={cardTitleStyle} title={stats.title}/>
+      <CardText>
+        <Layout type="column">
+          <Flex>
+            <TopStatCardWinner 
+              winner={winner} 
+              selectedPlayer={selectedPlayer}/>
+          </Flex>
+          <br/>
+          <Flex>
+            <TopStatCardRunnerUps
+              runnerUps={runnerUps}
+              selectedPlayer={selectedPlayer}/>
+          </Flex>
+        </Layout>
+      </CardText>
+    </Card>
+  )
 }
