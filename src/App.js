@@ -9,6 +9,8 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import Home from './components/Home';
 
+// const Test = ()=> <div>test</div>
+
 const App = () => {
     return (
       <BrowserRouter>
@@ -16,7 +18,8 @@ const App = () => {
           <div>
             <h2 className="app__header">Estadisticas A3 2017</h2>
 
-            <Route path='/' component={Home} />
+            <Route exact path='/' component={Home} />
+            {/*<Route path='/test' component={Test} />*/}
           </div>
         </MuiThemeProvider>
       </BrowserRouter>

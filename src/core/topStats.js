@@ -1,5 +1,7 @@
 import * as _ from 'lodash';
 
+const TOP_COUNT = 5;
+
 export function calculateTopStats(stats) {
   const avgStats = _.orderBy(stats, m => m.avg, 'desc');
   const hitsStats = _.orderBy(stats, m => m.hits, 'desc');
@@ -19,71 +21,67 @@ export function calculateTopStats(stats) {
     {
       title: 'HITS',
       tops: _
-        .take(hitsStats, 5)
-        .map(m => map(m, (f) => f.hits.toFixed(0))),
+        .take(hitsStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.hits.toFixed(0)))
     }, {
       title: 'RUNS',
       tops: _
-        .take(runsStats, 5)
-        .map(m => map(m, (f) => f.runs.toFixed(0))),
+        .take(runsStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.runs.toFixed(0)))
     }, {
       title: 'RBI',
       tops: _
-        .take(rbiStats, 5)
-        .map(m => map(m, (f) => f.rbi.toFixed(0))),
+        .take(rbiStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.rbi.toFixed(0)))
     }, {
       title: '1B',
       tops: _
-        .take(singlesStats, 5)
-        .map(m => map(m, (f) => f.singles.toFixed(0))),
+        .take(singlesStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.singles.toFixed(0)))
     }, {
       title: '2B',
       tops: _
-        .take(doublesStats, 5)
+        .take(doublesStats, TOP_COUNT)
         .map(m => map(m, (f) => f.doubles.toFixed(0)))
     }, {
       title: '3B',
       tops: _
-        .take(triplesStats, 5)
-        .map(m => map(m, (f) => f.triples)),
+        .take(triplesStats, TOP_COUNT)
+        .filter(f => f.triples > 0)
+        .map(m => map(m, (f) => f.triples))
     }, {
       title: 'AVG',
       tops: _
-        .take(avgStats, 5)
-        .map(m => map(m, (f) => f.avg.toFixed(3).slice(1))),
+        .take(avgStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.avg.toFixed(3).slice(1)))
     }, {
       title: 'OBP',
       tops: _
-        .take(obpStats, 5)
-        .map(m => map(m, (f) => f.obp.toFixed(3).slice(1))),
+        .take(obpStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.obp.toFixed(3).slice(1)))
     }, {
       title: 'SLG',
       tops: _
-        .take(slgStats, 5)
-        .map(m => map(m, (f) => f.slg.toFixed(3).slice(1))),
+        .take(slgStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.slg.toFixed(3).slice(1)))
     }, {
       title: 'SB',
       tops: _
-        .take(stolenBasesStats, 5)
-        .map(m => map(m, (f) => f.stolenBases.toFixed(0))),
-    }, 
-    // {
-    //   title: 'HR',
-    //   tops: _
-    //     .take(home_runsStats, 5)
-    //     .map(m => map(m, (f) => f.home_runs))
-    // }
+        .take(stolenBasesStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.stolenBases.toFixed(0)))
+    },
+    // {   title: 'HR',   tops: _     .take(home_runsStats, TOP_COUNT)     .map(m => map(m,
+    // (f) => f.home_runs)) }
     {
       title: 'BB',
       tops: _
-        .take(walksStats, 5)
-        .map(m => map(m, (f) => f.walks.toFixed(0))),
-    },
-    {
+        .take(walksStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.walks.toFixed(0)))
+    }, {
       title: 'SO',
       tops: _
-        .take(strikeOutsStats, 5)
-        .map(m => map(m, (f) => f.strikeOuts.toFixed(0))),
+        .take(strikeOutsStats, TOP_COUNT)
+        .map(m => map(m, (f) => f.strikeOuts.toFixed(0)))
     }
   ]
 }
