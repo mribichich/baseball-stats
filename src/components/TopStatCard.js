@@ -1,5 +1,7 @@
 import React from 'react';
-import { Card, CardTitle, CardText } from 'material-ui/Card';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
 import * as _ from 'lodash';
 
 import Layout from './Layout';
@@ -23,8 +25,8 @@ export default ({stats, selectedPlayer}) => {
 
   return (
     <Card style={cardStyle}>
-      <CardTitle style={cardTitleStyle} title={stats.title}/>
-      <CardText>
+      <CardHeader style={cardTitleStyle} title={stats.title}/>
+      <CardContent>
         <Layout type="column">
           <Flex>
             <TopStatCardWinner 
@@ -38,7 +40,7 @@ export default ({stats, selectedPlayer}) => {
               selectedPlayer={selectedPlayer}/>
           </Flex>
         </Layout>
-      </CardText>
+      </CardContent>
     </Card>
   )
 }

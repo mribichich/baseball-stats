@@ -1,5 +1,5 @@
 import React from 'react';
-import Glyphicon from 'react-bootstrap/lib/Glyphicon';
+// import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 
 export default ({columnName, columnDesc, activeSortColumn, order}) => {
   if (columnName !== activeSortColumn){
@@ -17,7 +17,9 @@ export default ({columnName, columnDesc, activeSortColumn, order}) => {
 
 const OrderIcon = ({order}) => (
   <span>
-    {order === 'asc' ? <Glyphicon glyph="sort-by-attributes" /> : null}
-    {order === 'desc' ? <Glyphicon glyph="sort-by-attributes-alt" /> : null}
+    {/* {order === 'asc' ? <Glyphicon glyph="sort-by-attributes" /> : null}
+    {order === 'desc' ? <Glyphicon glyph="sort-by-attributes-alt" /> : null} */}
+    {order === 'asc' ? 'ASC' : null}
+    {order === 'desc' ? 'DESC' : null}
   </span>
 );

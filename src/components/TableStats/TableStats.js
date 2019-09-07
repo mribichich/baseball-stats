@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import * as _ from 'lodash';
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-} from 'material-ui/Table';
-
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
 import TableStatsRow from './TableStatsRow';
 import Sort from './Sort';
 import {columns} from './columnMapper';
@@ -44,8 +42,8 @@ class TableStats extends Component {
     this.setState({stats: orderedStats})
   }
 
-  handleOnClick(e, rowNumber, columnNumber) {
-    const columnName = columns[columnNumber - 1].name;
+  handleOnClick = columnName => (e)=> {
+    // const columnName = columns[columnNumber - 1].name;
 
     const order = columnName === this.state.columnName
       ? this.state.order === 'desc'
@@ -62,17 +60,29 @@ class TableStats extends Component {
     return (
       <div style={{margin: '20px'}}>
       <Table>
-        <TableHeader 
-          displaySelectAll={false}
-          adjustForCheckbox={false}>
-          <TableRow onCellClick={(event, rowNumber, columnNumber) => this.handleOnClick(event, rowNumber, columnNumber)}>
+        <TableHead >
+          <TableRow>
             {columns.map(m=> (
-              <TableHeaderColumn key={m.name} style={m.name === 'name' ? nameCellStyle : cellStyle}>
-                <Sort columnName={m.name} columnDesc={m.description} activeSortColumn={this.state.columnName} order={this.state.order} />
-              </TableHeaderColumn>
+              <TableCell key={m.name} style={m.name === 'name' ? nameCellStyle : cellStyle}>
+                {/* <Sort columnName={m.name} columnDesc={m.description} activeSortColumn={this.state.columnName} order={this.state.order} /> */}
+
+                <TableSortLabel
+              active={this.state.columnName === m.name}
+              direction={this.state.order}
+              onClick={ this.handleOnClick(m.name)}
+            >
+              {m.description}
+              {/* {orderBy === headCell.id ? (
+                <span className={classes.visuallyHidden}>
+                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                </span>
+              ) : null} */}
+            </TableSortLabel>
+
+              </TableCell>
             ))}
           </TableRow>
-        </TableHeader>
+        </TableHead>
 
         <TableBody>
           {this

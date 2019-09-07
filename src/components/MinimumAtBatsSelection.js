@@ -1,14 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import TextField from 'material-ui/TextField';
+import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
 
 const MinimumAtBatsSelection = ({min, onChanged}) => {
   return (
     <div>
+    <InputLabel >Minimo PA</InputLabel>
       <TextField
         style={{ width: 100 }}
         defaultValue={min}
-        floatingLabelText="Minimo PA"
         type="number"
         min="0"
         onChange={(event) => onChanged(parseInt(event.target.value, 0))}/>
@@ -16,12 +16,7 @@ const MinimumAtBatsSelection = ({min, onChanged}) => {
   );
 }
 
-MinimumAtBatsSelection.PropTypes = {
-  min: PropTypes.number,
-  onChanged: PropTypes.func
-}
-
-MinimumAtBatsSelection.DefaultProps = {
+MinimumAtBatsSelection.defaultProps = {
   min: 0
 }
 

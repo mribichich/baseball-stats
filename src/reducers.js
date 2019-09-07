@@ -23,7 +23,7 @@ function stats(state = [], action) {
 		}
 }
 
-function highlightPlayer(state=null, action) {
+function highlightPlayer(state='', action) {
 		switch (action.type) {
 				case HIGHLIGHT_PLAYER:
 						return action.player

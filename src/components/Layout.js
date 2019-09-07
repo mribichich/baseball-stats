@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import assign from 'object-assign';
 
 export default class Layout extends Component {
@@ -26,12 +25,6 @@ export default class Layout extends Component {
     return <div className={classes.join(' ')} style={style}>{this.props.children}</div>;
   }
 }
-
-Layout.propTypes = {
-  type: PropTypes.string.isRequired,
-  className: PropTypes.string,
-  style: PropTypes.object
-};
 
 Layout.defaultProps = {
   type: 'row'
